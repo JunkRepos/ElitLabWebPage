@@ -1,13 +1,166 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://use.typekit.net/rcr1opg.css");
+@layer components{
+    .main-text {
+      @apply font-[cubano] text-[#0B132B] text-7xl tracking-wide;
+    }
+    .navLeft {
+      @apply justify-end w-screen flex items-center mt-1
+    }
+    .body {
+      
+      @apply bg-gradient-to-b from-[#12181B] to-[#202737] bg-fixed h-screen w-screen;
+    }
+    .navTextBox{
+      @apply mx-[max(1.5%,0.5rem)] flex justify-center 
+    }
+    .logoText {
+      @apply font-[cubano] font-bold text-white mx-[3%] text-[3rem];
+    }
+    .navText {
+      @apply font-[cubano] font-bold text-[1.2rem] text-white
+    }
+    .navText:hover {
+      @apply font-[cubano] font-bold text-[1.3rem] bg-gradient-to-r from-[#d60303] to-[#71034e] bg-clip-text text-transparent
+    }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    .input-icons i {
+      @apply absolute
+    }
+    i.icon-white {
+      @apply text-white
+    }
+    .input-icons {
+      @apply w-[100%] mb-[10px]
+    }
+
+    .navSearch {
+      @apply ml-[7%] font-[sofia-pro] text-[1rem] bg-[#2f2f2f] 
+      w-[11rem] text-white border-[0.07rem] border-[#7d7d7d] 
+      py-[0.15rem] pl-[2rem]
+    }
+
+    .navSearch:focus {
+      @apply border-[#A854F7] outline-none
+    }
+    .navSearch:hover {
+      @apply outline-none border-[#A854F7]
+    }
+
+    .navButton {
+      @apply bg-white bg-contain text-black text-[1.2rem] font-[cubano] w-[5rem] h-[2.7rem] grid items-center justify-center
+    }
+
+    .navLogin:hover {
+      @apply bg-[#A854F7] text-white
+    }
+    .navLogin {
+      @apply bg-white
+    }
+    .navButton:hover .navLoginBack {
+      @apply bg-transparent
+    }
+    .navLoginBack {
+      @apply bg-black
+    }
+    .headerText {
+      @apply font-[cubano] text-white text-7xl
+    }
+    .headerSubText {
+      @apply font-[cubano] text-white text-7xl bg-gradient-to-r from-[#d60303] to-[#71034e] bg-clip-text text-transparent
+    }
+    .box {
+      @apply w-[40vw] h-[40vw]
+    }
+    .info {
+      position: absolute;
+      top: 10px;
+      width: 100%;
+      color: white;
+      text-align: center;
+      /* z-index: 100; */
+      display:block;
+    }
+    @media (max-width: 1024px) {
+      .headerText {
+        @apply font-[cubano] text-white text-6xl
+      }
+      .headerSubText {
+        @apply font-[cubano] text-white text-6xl bg-gradient-to-r from-[#d60303] to-[#71034e] bg-clip-text text-transparent
+      }
+      .headerBody {
+        @apply flex h-[calc(100vh-6rem)] w-[100%] justify-center
+      }
+      .headerSubText2 {
+        @apply font-[sofia-pro] text-white text-[1.5rem] font-[400] hidden
+      }
+      .navSearchIcon {
+        @apply text-[1.75rem] font-bold icon-white
+      }
+      .navSearchBox {
+        @apply pr-5 pt-[0.6rem] hidden
+      }
+      .navLoginIcon {
+        @apply mx-[1.5%] w-[2rem] text-white
+      }
+      .navLoginBox {
+        @apply ml-[1.5%] mr-[3%] bg-red-500 hidden
+      }
+    }
+    @media (min-width: 1024px){
+      .headerText {
+        @apply font-[cubano] text-white text-7xl
+      }
+      .headerSubText {
+        @apply font-[cubano] text-white text-6xl bg-gradient-to-r from-[#d60303] to-[#71034e] bg-clip-text text-transparent
+      }
+      .headerBody {
+        @apply flex h-[calc(100vh-6rem)]  ml-[5vw]
+      }
+      .headerSubText2 {
+        @apply font-[sofia-pro] text-white text-[1.75rem] font-[400]
+      }
+      .navSearchIcon {
+        @apply text-[1.75rem] font-bold icon-white hidden
+      }
+      .navSearchBox {
+        @apply pr-5 pt-[0.6rem]
+      }
+      .navLoginIcon {
+        @apply mx-[1.5%] w-[2rem] text-white hidden
+      }
+      .navLoginBox {
+        @apply ml-[1.5%] mr-[3%] bg-red-500
+      }
+      
+    }
+    @media (max-width: 1200px and min-width: 1024px){
+      .headerText {
+        @apply font-[cubano] text-white text-6xl
+      }
+      .headerSubText {
+        @apply font-[cubano] text-white text-6xl bg-gradient-to-r from-[#d60303] to-[#71034e] bg-clip-text text-transparent
+      }
+      .headerBody {
+        @apply flex h-[calc(100vh-6rem)]  ml-[5vw]
+      }
+      .headerSubText2 {
+        @apply font-[sofia-pro] text-white text-[1.5rem] font-[400]
+      }
+      .navSearchIcon {
+        @apply text-[1.75rem] font-bold icon-white
+      }
+      .navSearchBox {
+        @apply pr-5 pt-[0.6rem]
+      }
+      .navLoginIcon {
+        @apply mx-[1.5%] w-[2rem] text-white
+      }
+      .navLoginBox {
+        @apply ml-[1.5%] mr-[3%] bg-red-500
+      }
+      
+    }
 }
